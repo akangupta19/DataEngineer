@@ -1,13 +1,11 @@
-import numpy as np
+def histogram( items ):
+    for n in items:
+        output = ''
+        times = n
+        while( times > 0 ):
+          output += '*'
+          times = times - 1
+        print(output)
 
-import matplotlib.pyplot as plt
-
-x = np.arange(1,11)
-y = 2 * x + 5
-plt.title("Matplotlib demo")
-plt.xlabel("x axis caption")
-plt.ylabel("y axis caption")
-plt.plot(x,y)
-plt.show()
-
+histogram([2, 3, 6, 5])
 
