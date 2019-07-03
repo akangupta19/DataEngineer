@@ -18,7 +18,7 @@ if __name__ == "__main__":
    print("Scalar Product Matrix is : ")
    for i in range(N):
         for j in range(N):
-           print(mat[i][j],end=" ")
+           print(mat[i][j], end=" ")
         print()
 
 
