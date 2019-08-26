@@ -21,20 +21,21 @@ def bq_create_table():
     dataset_ref = bigquery_client.dataset('my_new_dataset')
 
     # Prepares a reference to the table
-    table_ref = dataset_ref.table('salary_3')
+    table_ref = dataset_ref.table('twitter')
 
     try:
         bigquery_client.get_table(table_ref)
     except Exception:
         schema = [
-            bigquery.SchemaField('Years', 'STRING', mode='REQUIRED'),
-            bigquery.SchemaField('Salary', 'STRING', mode='REQUIRED'),
+            bigquery.SchemaField('Id', 'STRING', mode='REQUIRED'),
+            bigquery.SchemaField('Tweet', 'STRING', mode='REQUIRED'),
+            bigquery.SchemaField('Label', 'STRING', mode='REQUIRED'),
         ]
         table = bigquery.Table(table_ref, schema=schema)
         table = bigquery_client.create_table(table)
         print('table {} created.'.format(table.table_id))
 
-#bq_create_table()
+bq_create_table()
 
 
 
